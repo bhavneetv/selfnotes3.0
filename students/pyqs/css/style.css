@@ -1,0 +1,274 @@
+  /* Custom styles for dark mode */
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+/* note btn  */
+.button-transition {
+    transition: all 0.3s ease;
+}
+.summary-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.summary-container.active {
+    max-height: 500px;
+}
+.gradient-bg {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+/* Add to your style.css file */
+:root {
+    /* Light theme colors */
+    --bg-color: #f9fafb;
+    --nav-bg: #ffffff;
+    --text-color: #111827;
+    --card-bg: #ffffff;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --sidebar-bg: #1f2937;
+    --sidebar-text: #ffffff;
+    --footer-bg: #1f2937;
+    --footer-text: #ffffff;
+    --border-color: #e5e7eb;
+  }
+  
+  :root.dark {
+    /* Dark theme colors */
+    --bg-color: #111827;
+    --nav-bg: #1f2937;
+    --text-color: #f9fafb;
+    --card-bg: #1f2937;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --sidebar-bg: #111827;
+    --sidebar-text: #ffffff;
+    --footer-bg: #111827;
+    --footer-text: #ffffff;
+    --border-color: #374151;
+  }
+  
+  /* Apply variables to elements */
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  nav#sidebar {
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+  }
+  
+  header {
+    background-color: var(--nav-bg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bg-white {
+    background-color: var(--card-bg) !important;
+  }
+  
+  footer.bg-gray-900 {
+    background-color: var(--footer-bg);
+  }
+
+  /* Update card styles for dark mode */
+.dark .bg-white.rounded-xl {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+  }
+  
+  .dark .text-gray-800 {
+    color: #e5e7eb;
+  }
+  
+  .dark .text-gray-700, 
+  .dark .text-gray-600,
+  .dark .text-gray-500,
+  .dark .text-gray-400 {
+    color: #9ca3af;
+  }
+  
+  /* Update form elements for dark mode */
+  .dark input[type="text"] {
+    background-color: #374151;
+    color: #f9fafb;
+    border-color: #4b5563;
+  }
+  
+  .dark input[type="text"]::placeholder {
+    color: #9ca3af;
+  }
+
+/* main  */
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: #4F46E5;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.slide-enter {
+    animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.chapter-list {
+    transition: all 0.3s ease;
+}
+
+.progress-ring {
+    transition: stroke-dashoffset 0.35s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+.modal {
+    backdrop-filter: blur(5px);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #1F2937;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #4F46E5;
+    border-radius: 3px;
+}
+
+.sidebar-collapsed {
+width: 5rem !important;
+}
+
+.sidebar-collapsed .sidebar-text,
+.sidebar-collapsed .chapter-list,
+.sidebar-collapsed .profile-details {
+display: none;
+}
+
+.sidebar-collapsed .sidebar-icon {
+margin-right: 0;
+}
+
+.content-expanded {
+margin-left: 5rem !important;
+}
+
+.note-card {
+animation: fadeSlideIn 0.5s ease-out;
+}
+.summ{
+margin-left: 20px;
+}
+@keyframes fadeSlideIn {
+from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+.dark-mode{
+    background-color: #24292E;
+}
+.dark-mode body {
+    background-color: #1a202c;
+    color: #e2e8f0;
+}
+.dark-mode .bg-white {
+    background-color: #2d3748;
+    color: #e2e8f0;
+}
+.dark-mode .text-gray-800 {
+    color: #e2e8f0;
+}
+.dark-mode .bg-gray-900 {
+    background-color: #1a202c;
+}
+.dark-mode .bg-gray-800 {
+    background-color: #2d3748;
+}
+.dark-mode .text-gray-400 {
+    color: #a0aec0;
+}
+.dark-mode .bg-gray-100 {
+    background-color: #4a5568;
+}
+.dark-mode .bg-indigo-600 {
+    background-color: #4c51bf;
+}
+.dark-mode .bg-indigo-700 {
+    background-color: #434190;
+}
+
+.chat-open {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.chat-minimized {
+    transform: translateY(calc(100% - 64px)) !important;
+}
+
+.typing-indicator {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0.5rem;
+}
+
+.typing-indicator span {
+    width: 4px;
+    height: 4px;
+    background-color: #6366f1;
+    border-radius: 50%;
+    margin: 0 1px;
+    animation: blink 1s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+
